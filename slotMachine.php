@@ -29,7 +29,7 @@ function displayBoard(array $board)
     echo implode("  ", $board[2]) . PHP_EOL;
 }
 
-$symbols = ["🍎", "🍏", "🍐", "🍊", "🍋", "🍌", "🍉"];
+$symbols = ["🍎", "🍒", "🍐", "🍊", "🍋", "🍌", "🍉"];
 $multipliers = [0.5, 1.5, 2, 3, 4, 5, 50];
 $winningSymbol = " ";
 
