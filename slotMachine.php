@@ -1,6 +1,6 @@
 <?php
 
-$wallet = 100;
+$credit = 100;
 
 $board = [
     [" ", " ", " ", " ", " "],
@@ -124,11 +124,11 @@ function winLine($board, $winningSymbol)
     return $winningSymbol;
 }
 
-echo "Welcome to slots game!" . PHP_EOL;
+echo "SLOTS GAME" . PHP_EOL;
 echo PHP_EOL;
-echo "Your balance is $wallet" . PHP_EOL;
+echo "Your credit is $credit" . PHP_EOL;
 $bet = (int)readline("Choose your bet size: ");
-$choice = readline("Spin? (Y/N): ");
+$choice = readline("Play? (Y/N): ");
 
 while (true) {
     while (checkFreeSpaces($board) > 0) {
@@ -145,29 +145,18 @@ while (true) {
             $keyForWinSymbol = array_search(winLine($board, $winningSymbol), $symbols);
             $multiplier = $multipliers[$keyForWinSymbol];
             $winningSum = $bet * $multiplier;
-            echo "Multiplier you got is $multiplier" . PHP_EOL;
+            echo "Multiplier is $multiplier" . PHP_EOL;
             echo "You won $winningSum" . PHP_EOL;
-            $wallet += $winningSum;
+            $credit += $winningSum;
         } else {
             echo "You lost!" . PHP_EOL;
-            $wallet -= $bet;
-            if ($wallet <= 0 || $wallet < $bet) {
+            $credit -= $bet;
+            if ($credit <= 0 || $credit < $bet) {
                 echo "You don't have money!" . PHP_EOL;
                 exit();
             }
         }
-        echo "Your balance is $wallet" . PHP_EOL;
-
-//        $choice = readline("Spin? (Y/N): ");
-
-        if ($choice === "Y") {
-            for ($i = 0; $i < 3; $i++) {
-                for ($j = 0; $j < 5; $j++) {
-                    $board[$i][$j] = " ";
-                }
-            }
-        } else {
-            exit();
-        }
+        echo "Your credit is $credit" . PHP_EOL;
+        exit();
     }
 }
