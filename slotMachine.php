@@ -127,7 +127,7 @@ function winLine($board, $winningSymbol)
 echo "SLOTS GAME" . PHP_EOL;
 echo PHP_EOL;
 echo "Your credit is $credit" . PHP_EOL;
-$bet = (int)readline("Choose your bet size: ");
+$bet = (int)readline("Input your bet: ");
 $choice = readline("Play? (Y/N): ");
 
 while (true) {
